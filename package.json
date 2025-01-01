@@ -1,0 +1,11 @@
+{
+  "name": "chai-aur-backend",
+  "version": "1.0.0",
+  "description": "we are making youtube backend using chai aur code youtube videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ravi",
+  "license": "ISC"
+}
