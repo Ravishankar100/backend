@@ -3,12 +3,26 @@
 
 import connectDB from "./db/index.js";  // connectDB is imported from db.js
 
-
-connectDB();  // connectDB function is called
-
 import dotenv from "dotenv";  // dotenv is imported from dotenv module
 dotenv.config({ path: "./env" });  // dotenv.config() is called with path as argument
 
+
+connectDB() // connectDB function is called
+.then(()=>{
+    // check error event while connecting to server 
+    // error is an event in nodejs which is emitted when an error occurs
+
+    app.on("error",(error)=>{
+        console.log("Error in connecting to server",error);
+        throw error;
+    })
+    app.listen(process.env.PORT ||8000,()=>{
+        console.log(`Server is running on port ${process.env.PORT || 8000}`);   
+    })
+})
+.catch((err) =>{
+    console.log("Error in connecting to database", err);
+})
 
 
 
